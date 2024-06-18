@@ -26,7 +26,7 @@ async def login(user: Usuario):
         session_token = str(uuid.uuid4())
         data['sessions'][session_token] = user.nome
         save_user_data(data)
-        return {"token": session_token, "chatserver": "chatserver:8001"}
+        return {"token": session_token, "chatserver": "chat-room_chat_server_1:8001"}
     raise HTTPException(status_code=401, detail="Invalid credentials")
 
 @app.post("/validate_token")
